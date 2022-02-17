@@ -6,7 +6,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payment_ui/paymentpage/payment_page.dart';
 import 'package:payment_ui/screen/homepage.dart';
-import 'package:payment_ui/screen/navigation_bar.dart';
 import 'package:slide_to_confirm/slide_to_confirm.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 

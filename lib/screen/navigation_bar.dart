@@ -38,7 +38,7 @@ class NavigationPage extends StatelessWidget {
             showSelectedLabels: false,
             showUnselectedLabels: false,
             onTap: (index) {
-              navigationcontroller.changeIndex(index, context);
+              navigationcontroller.changeIndex(index.obs, context);
             },
             currentIndex: navigationcontroller.selectedIndex.value,
             elevation: 0.0,

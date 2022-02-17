@@ -8,11 +8,11 @@ import 'package:payment_ui/screen/navigation_bar.dart';
 import 'package:payment_ui/walletpage/wallet_page.dart';
 
 class NavigationController extends GetxController {
-  var selectedIndex = 0.obs;
+  RxInt selectedIndex = 0.obs;
 
-  void changeIndex(int index, BuildContext context) {
-    if (index != 1 || index != 2 || index != 4) {
-      selectedIndex.value = index;
+  void changeIndex(RxInt index, BuildContext context) {
+    if (index != 1.obs || index != 2.obs || index != 4.obs) {
+      selectedIndex.value = index as int;
     } else {
       SchedulerBinding.instance?.addPostFrameCallback((_) {
         Navigator.push(
