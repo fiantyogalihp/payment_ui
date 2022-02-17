@@ -20,7 +20,7 @@ class _AccountPageState extends State<AccountPage> {
           leading: IconButton(
               onPressed: () {
                 setState(() {
-                  Navigator.pop(context);
+                  Navigator.of(context, rootNavigator: true).pop(context);
                 });
               },
               icon: const Icon(

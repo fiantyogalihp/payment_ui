@@ -8,7 +8,7 @@ class NavigationController extends GetxController {
   var selectedIndex = 0.obs;
 
   void changeIndex(int index, BuildContext context) {
-    if (index != 1 || index != 2 || index == 4) {
+    if (index != 1) {
       selectedIndex.value = index;
     } else {
       Navigator.pushAndRemoveUntil(
@@ -32,7 +32,7 @@ class NavigationController extends GetxController {
       );
     }
 
-    if (index == 4) {
+    if (index != 4) {
       selectedIndex.value = index;
     } else {
       Navigator.pushAndRemoveUntil(

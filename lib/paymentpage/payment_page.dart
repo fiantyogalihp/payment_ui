@@ -30,7 +30,7 @@ class _PaymentPageState extends State<PaymentPage> {
           leading: IconButton(
               onPressed: () {
                 setState(() {
-                  Navigator.pop(context);
+                  Navigator.of(context, rootNavigator: true).pop(context);
                 });
               },
               icon: const Icon(
