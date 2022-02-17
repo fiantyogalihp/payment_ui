@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 import '../widget/widget.dart';
 
@@ -11,14 +12,6 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    setState(() {
-      Navigator.of(context, rootNavigator: true).pop(context);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +20,11 @@ class _AccountPageState extends State<AccountPage> {
           elevation: 0.0,
           leading: IconButton(
               onPressed: () {
-                initState();
+                setState(() {
+                  SchedulerBinding.instance!.addPostFrameCallback((_) {
+                    Navigator.pop(this.context);
+                  });
+                });
               },
               icon: const Icon(
                 CupertinoIcons.back,

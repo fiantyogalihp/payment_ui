@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payment_ui/paymentpage/payment_page.dart';
 import 'package:payment_ui/screen/homepage.dart';
@@ -233,14 +234,15 @@ class _SwipeButtonState extends State<SwipeButton> {
   }
 
   customShapeButton(BuildContext context) {
-    Timer _timer;
     return showDialog(
       context: context,
       builder: (BuildContext context) {
-        _timer = Timer(const Duration(seconds: 2), () {
+        Future.delayed(const Duration(seconds: 2), () {
           setState(() {
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (_) => const PaymentPage()));
+            SchedulerBinding.instance?.addPostFrameCallback((_) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const PaymentPage()));
+            });
           });
         });
         return Dialog(

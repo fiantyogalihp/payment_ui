@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:payment_ui/widget/widget.dart';
 
 class WalletPage extends StatefulWidget {
@@ -11,15 +12,6 @@ class WalletPage extends StatefulWidget {
 
 class _WalletPageState extends State<WalletPage> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    setState(() {
-      Navigator.of(context, rootNavigator: true).pop(context);
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     // Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -28,7 +20,11 @@ class _WalletPageState extends State<WalletPage> {
           elevation: 0.0,
           leading: IconButton(
               onPressed: () {
-                initState();
+                setState(() {
+                  SchedulerBinding.instance!.addPostFrameCallback((_) {
+                    Navigator.pop(this.context);
+                  });
+                });
               },
               icon: const Icon(
                 CupertinoIcons.back,
