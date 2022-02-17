@@ -11,6 +11,14 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setState(() {
+      Navigator.of(context, rootNavigator: true).pop(context);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,9 +27,7 @@ class _AccountPageState extends State<AccountPage> {
           elevation: 0.0,
           leading: IconButton(
               onPressed: () {
-                setState(() {
-                  Navigator.of(context, rootNavigator: true).pop(context);
-                });
+                initState();
               },
               icon: const Icon(
                 CupertinoIcons.back,
@@ -70,7 +76,7 @@ class _AccountPageState extends State<AccountPage> {
                             color: WHITE))
                   ]),
                   const Text(
-                    '\$14.00',
+                    '\$145.00',
                     style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,

@@ -11,6 +11,15 @@ class WalletPage extends StatefulWidget {
 
 class _WalletPageState extends State<WalletPage> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setState(() {
+      Navigator.of(context, rootNavigator: true).pop(context);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     // Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -19,9 +28,7 @@ class _WalletPageState extends State<WalletPage> {
           elevation: 0.0,
           leading: IconButton(
               onPressed: () {
-                setState(() {
-                  Navigator.of(context, rootNavigator: true).pop(context);
-                });
+                initState();
               },
               icon: const Icon(
                 CupertinoIcons.back,

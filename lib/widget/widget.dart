@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payment_ui/paymentpage/payment_page.dart';
 import 'package:payment_ui/screen/homepage.dart';
 import 'package:payment_ui/screen/navigation_bar.dart';
 import 'package:slide_to_confirm/slide_to_confirm.dart';
@@ -239,14 +240,14 @@ class _SwipeButtonState extends State<SwipeButton> {
         _timer = Timer(const Duration(seconds: 2), () {
           setState(() {
             Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (_) => const NavigationPage()));
+                MaterialPageRoute(builder: (_) => const PaymentPage()));
           });
         });
         return Dialog(
           backgroundColor: TRANSPARENT,
           child: Container(
             height: 70,
-            width: 500,
+            width: 450,
             decoration: circularBRadiusContainer(
                 topleftradius: 0,
                 toprightradius: 50,
@@ -268,7 +269,7 @@ class _SwipeButtonState extends State<SwipeButton> {
                   ),
                   Text(
                     'Payment Verified',
-                    style: textstyle(FontWeight.bold, WHITE, 38),
+                    style: textstyle(FontWeight.bold, WHITE, 34),
                   ),
                 ],
               ),

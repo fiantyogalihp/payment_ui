@@ -18,7 +18,7 @@ class NavigationPage extends StatelessWidget {
     WalletPage(),
     PaymentPage(),
     ChatPage(),
-    AccountPage()
+    AccountPage(),
   ];
 
   @override
