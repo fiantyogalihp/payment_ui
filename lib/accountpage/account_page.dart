@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 
 import '../widget/widget.dart';
 
@@ -21,7 +20,7 @@ class _AccountPageState extends State<AccountPage> {
           leading: IconButton(
               onPressed: () {
                 setState(() {
-                  SchedulerBinding.instance!.addPostFrameCallback((_) {
+                  WidgetsBinding.instance!.addPostFrameCallback((_) {
                     Navigator.pop(this.context);
                   });
                 });

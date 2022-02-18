@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
@@ -31,7 +30,7 @@ class _PaymentPageState extends State<PaymentPage> {
           leading: IconButton(
               onPressed: () {
                 setState(() {
-                  SchedulerBinding.instance!.addPostFrameCallback((_) {
+                  WidgetsBinding.instance!.addPostFrameCallback((_) {
                     Navigator.pop(this.context);
                   });
                 });
