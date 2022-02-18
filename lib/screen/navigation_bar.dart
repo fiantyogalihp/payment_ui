@@ -8,12 +8,27 @@ import 'package:payment_ui/paymentpage/payment_page.dart';
 import 'package:payment_ui/screen/homepage.dart';
 import 'package:payment_ui/walletpage/wallet_page.dart';
 
-class NavigationPage extends StatelessWidget {
-  static NavigationController navigationcontroller =
-      Get.put(NavigationController());
+class NavigationPage extends StatefulWidget {
   const NavigationPage({Key? key}) : super(key: key);
 
-  final screens = const [
+  @override
+  _NavigationPageState createState() => _NavigationPageState();
+}
+
+class _NavigationPageState extends State<NavigationPage> {
+  static NavigationController navigationcontroller =
+      Get.put(NavigationController());
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    navigationcontroller.changeIndex;
+    navigationcontroller.selectedIndex.value;
+  }
+
+  final _screens = const [
     HomePage(),
     WalletPage(),
     PaymentPage(),
@@ -27,7 +42,7 @@ class NavigationPage extends StatelessWidget {
         body: Obx(
           () => IndexedStack(
             index: navigationcontroller.selectedIndex.value,
-            children: screens,
+            children: _screens,
           ),
         ),
         bottomNavigationBar: Obx(
@@ -38,7 +53,9 @@ class NavigationPage extends StatelessWidget {
             showSelectedLabels: false,
             showUnselectedLabels: false,
             onTap: (index) {
-              navigationcontroller.changeIndex(index, context);
+              setState(() {
+                navigationcontroller.changeIndex(index, this.context);
+              });
             },
             currentIndex: navigationcontroller.selectedIndex.value,
             elevation: 0.0,
