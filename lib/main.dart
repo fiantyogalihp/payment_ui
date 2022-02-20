@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:payment_ui/widget/widget.dart';
-import 'package:payment_ui/screen/navigation_bar.dart';
+import '../widget/widget.dart';
+import '../screen/navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());

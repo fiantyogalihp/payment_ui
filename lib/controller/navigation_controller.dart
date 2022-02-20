@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:payment_ui/accountpage/account_page.dart';
-import 'package:payment_ui/paymentpage/payment_page.dart';
+import '../accountpage/account_page.dart';
+import '../paymentpage/payment_page.dart';
 
 import '../walletpage/wallet_page.dart';
 

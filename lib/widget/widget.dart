@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:payment_ui/paymentpage/payment_page.dart';
-import 'package:payment_ui/screen/homepage.dart';
 import 'package:slide_to_confirm/slide_to_confirm.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+
+import '../paymentpage/payment_page.dart';
+import '../screen/homepage.dart';
 
 const Color WHITE = Colors.white;
 const Color BLACK = Colors.black;
@@ -238,8 +238,8 @@ class _SwipeButtonState extends State<SwipeButton> {
       builder: (BuildContext context) {
         Future.delayed(const Duration(seconds: 2), () {
           setState(() {
-            SchedulerBinding.instance?.addPostFrameCallback((_) {
-              Navigator.push(context,
+            WidgetsBinding.instance?.addPostFrameCallback((_) {
+              Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => const PaymentPage()));
             });
           });
