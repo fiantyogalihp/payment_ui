@@ -30,9 +30,7 @@ class _PaymentPageState extends State<PaymentPage> {
           leading: IconButton(
               onPressed: () {
                 setState(() {
-                  WidgetsBinding.instance!.addPostFrameCallback((_) {
-                    Navigator.pop(this.context);
-                  });
+                  Navigator.of(context).popUntil((route) => route.isFirst);
                 });
               },
               icon: const Icon(

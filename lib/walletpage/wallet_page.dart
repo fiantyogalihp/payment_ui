@@ -20,9 +20,7 @@ class _WalletPageState extends State<WalletPage> {
           leading: IconButton(
               onPressed: () {
                 setState(() {
-                  WidgetsBinding.instance!.addPostFrameCallback((_) {
-                    Navigator.pop(this.context);
-                  });
+                  Navigator.pop(this.context);
                 });
               },
               icon: const Icon(

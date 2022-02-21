@@ -52,11 +52,9 @@ addHorizontalSpace(double width) {
   }
 
   @override
-  // TODO: implement maxExtent
   double get maxExtent => 100;
 
   @override
-  // TODO: implement minExtent
   double get minExtent => 400;
 
   @override
@@ -238,10 +236,8 @@ class _SwipeButtonState extends State<SwipeButton> {
       builder: (BuildContext context) {
         Future.delayed(const Duration(seconds: 2), () {
           setState(() {
-            WidgetsBinding.instance?.addPostFrameCallback((_) {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => const PaymentPage()));
-            });
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => const PaymentPage()));
           });
         });
         return Dialog(

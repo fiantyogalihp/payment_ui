@@ -19,15 +19,6 @@ class _NavigationPageState extends State<NavigationPage> {
   static NavigationController navigationcontroller =
       Get.put(NavigationController());
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-    navigationcontroller.changeIndex;
-    navigationcontroller.selectedIndex.value;
-  }
-
   final _screens = const [
     HomePage(),
     WalletPage(),

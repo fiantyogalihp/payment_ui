@@ -10,26 +10,20 @@ class NavigationController extends GetxController {
 
   void changeIndex(int index, BuildContext context) {
     if (index == 1) {
-      WidgetsBinding.instance?.addPostFrameCallback((_) {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (BuildContext context) => const WalletPage()));
-      });
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => const WalletPage()));
     } else if (index == 2) {
-      WidgetsBinding.instance?.addPostFrameCallback((_) {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (BuildContext context) => const PaymentPage()));
-      });
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => const PaymentPage()));
     } else if (index == 4) {
-      WidgetsBinding.instance?.addPostFrameCallback((_) {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (BuildContext context) => const AccountPage()));
-      });
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => const AccountPage()));
     } else {
       selectedIndex.value = index;
     }
